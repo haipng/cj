@@ -27,6 +27,8 @@ int main() {
     return 0;
 }
 
+const int INF = (int)1e9;
+
 void solve() {
     cout << "Good luck!!\n";
 }
