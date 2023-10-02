@@ -27,9 +27,12 @@ int main() {
     return 0;
 }
 
-const int INF = (int)1e9;
+//const ll MOD = ll(1e9)+7;
+//const ll INF = ll(1e18);
+const int INF = int(1e9);
+
 
 void solve() {
-    cout << "Good luck!!\n";
+    cout << "To " << INF << " and beyond\n";
 }
 
