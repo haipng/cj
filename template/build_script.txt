@@ -1,0 +1,9 @@
+# test
+g++ A.cpp -o alo && alo.exe < inp.txt
+g++ B.cpp -o alo && alo.exe < inp.txt
+g++ C.cpp -o alo && alo.exe < inp.txt
+g++ D.cpp -o alo && alo.exe < inp.txt
+
+
+# clear
+del *.exe

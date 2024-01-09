@@ -1,8 +1,11 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-typedef long long ll;
 
+#define pb push_back
+#define FOR(_i, _a, _b) for (int _i = (_a); _i < (_b); _i++)
+
+typedef long long              ll;
 typedef pair<int,int>         pii;
 typedef vector<int>            vi;
 typedef vector<vector<int>>   vvi;
@@ -24,7 +27,12 @@ int main() {
     return 0;
 }
 
+const ll MOD   = ll(1e9)+7;
+const ll LLINF = ll(1e18);
+const int INF  = int(1e9);
+
+
 void solve() {
-    cout << "Good luck\n";
+    cout << "To " << INF << " and beyond\n";
 }
 
