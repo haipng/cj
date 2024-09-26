@@ -16,7 +16,6 @@ void gen(int k) {
     return;
   }
   
-
   for(int i=0; i<n; i++) {
     if(!v[i]) {
       v[i] = true;
