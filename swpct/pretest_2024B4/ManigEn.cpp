@@ -1,4 +1,4 @@
-https://www.hackerrank.com/contests/dn-swpct-2024-batch-4th/challenges/manig-en
+//https://www.hackerrank.com/contests/dn-swpct-2024-batch-4th/challenges/manig-en
 #include<bits/stdc++.h>
 using namespace std;
 int main(int argc, char *argv[])
