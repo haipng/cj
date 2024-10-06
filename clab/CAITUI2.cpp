@@ -1,12 +1,64 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// SUBSET SUM
+// MEET IN THE MIDDLE
+
 int n, m;
-vector<int> w(41), v(41);
-vector<int> dp(1000000001, 0);
+int v[44], w[44];
+typedef long long LL;
+pair<LL, LL> wv1[1<<20];
+pair<LL, LL> wv2[1<<20];
 
-long long solve(int m, long long sum_v, int idx) {
+void solve_half(int n, int offset, pair<LL, LL> *wv) {
+  for(int i=0; i<(1<<n); i++) {
+    for(int j=0; j<n; j++) {
+        if(i & (1<<j)) {
+          wv[i].first += w[j+offset];
+          wv[i].second += v[j+offset];
+        }
+    }
+  }
+}
 
+int solve() {
+  solve_half(n/2, 0, wv1);
+  solve_half(n-n/2, n/2, wv2);
+
+  int size_wv1 = 1 << (n/2);
+  int size_wv2 = 1 << (n-n/2);
+
+  sort(wv2, wv2 + size_wv2);
+
+  LL max_val[size_wv2];
+  LL max_cur = 0;
+  for(int i=0; i < size_wv2; i++) {
+    max_cur = max(max_cur, wv2[i].second);
+    max_val[i] = max_cur;
+  }
+
+  LL ans = 0;
+  for(int i=0; i < size_wv1; i++) {
+    if(wv1[i].first > m) continue;
+
+    int lo=0, hi=size_wv2-1;
+    int idx = 0;
+    while(lo<=hi) {
+      int mid = (lo + hi)/2;
+      
+      if(wv1[i].first + wv2[mid].first <= m) {
+        idx = mid;
+        lo = mid+1;
+      }
+      else {
+        hi=mid-1;
+      }
+    }
+
+    ans = max(ans, wv1[i].second + max_val[idx]);
+  }
+
+  return ans;
 }
 
 int main() 
@@ -17,10 +69,7 @@ int main()
     cin >> w[i] >> v[i];
   }
   
-  cout << solve(m, 0, 0);
-  // for(int i=0; i<n; i++) {
-  //   cout << dp[i]<< " ";
-  // }
+  cout << solve() << "\n";
 
   return 0;
 }

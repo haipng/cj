@@ -20,7 +20,7 @@ int main()
     cin >> w[i] >> v[i];
   }
   
-  cout << solve(m, 0, 0);
+  cout << solve(m, 0, 0) << "\n";
 
   return 0;
 }

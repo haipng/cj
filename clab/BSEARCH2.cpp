@@ -8,7 +8,7 @@ int n, m;
 
 int solve(int val) {
   int lo=0, hi=n-1;
-  int ans = -2;
+  int ans = -1;
   while(lo<=hi) {
     int mid = (lo + hi)/2;
     
@@ -21,6 +21,7 @@ int solve(int val) {
     }
   }
 
+  if(idx == -1) abort();
   return ans;
 }
 
