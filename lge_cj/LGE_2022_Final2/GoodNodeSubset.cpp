@@ -55,7 +55,6 @@ void dp(int node) {
         
         maxv=max(maxv, diff);
         in[node] += ex[i];
-
     }
     ex[node]=ans+maxv;
 }

@@ -4,13 +4,15 @@ using namespace std;
 // SUBSET SUM
 // MEET IN THE MIDDLE
 
+typedef long long LL;
+
 int n, m;
 int v[44], w[44];
-typedef long long LL;
-pair<LL, LL> wv1[1<<20];
-pair<LL, LL> wv2[1<<20];
+pair<LL,LL> wv1[1<<20];
+pair<LL,LL> wv2[1<<20];
+LL max_val[1<<20];
 
-void solve_half(int n, int offset, pair<LL, LL> *wv) {
+void solve_half(int n, int offset, pair<LL,LL> *wv) {
   for(int i=0; i<(1<<n); i++) {
     for(int j=0; j<n; j++) {
         if(i & (1<<j)) {
@@ -21,7 +23,7 @@ void solve_half(int n, int offset, pair<LL, LL> *wv) {
   }
 }
 
-int solve() {
+LL solve() {
   solve_half(n/2, 0, wv1);
   solve_half(n-n/2, n/2, wv2);
 
@@ -30,7 +32,7 @@ int solve() {
 
   sort(wv2, wv2 + size_wv2);
 
-  LL max_val[size_wv2];
+  
   LL max_cur = 0;
   for(int i=0; i < size_wv2; i++) {
     max_cur = max(max_cur, wv2[i].second);
