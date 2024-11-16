@@ -1,4 +1,3 @@
-//https://c-lab.vn/problems/LIQ2
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -32,6 +31,7 @@ int main()
   }
   
   solve();
-
+  
+  
   return 0;
 }

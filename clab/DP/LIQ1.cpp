@@ -1,11 +1,18 @@
-//https://c-lab.vn/problems/LIQ1
 #include <bits/stdc++.h>
 using namespace std;
 
 int n;
 int a[100010];
 
+// class DP {
+//   public:
+//   int len;
+//   int prev_less;
+//   int prev_greater;
+// };
+
 int dp[100010];
+
 
 void solve() {
   memset(dp, 0, sizeof(dp));
@@ -25,6 +32,7 @@ void solve() {
   cout << ans << endl;
 }
 
+
 int main() 
 {
   cin >> n;
@@ -34,6 +42,7 @@ int main()
   }
   
   solve();
+  
   
   return 0;
 }
